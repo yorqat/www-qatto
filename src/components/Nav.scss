@@ -1,0 +1,23 @@
+@import '../styles/_global-imports';
+
+nav.nav {
+    width: 100%;
+
+    .nav__box {
+        background-color: $baby-blue-eyes;
+        padding: 1rem;
+        margin: 0;
+        display: flex;
+
+        font-size: 1.2em;
+
+        :first-of-type {
+            margin-right: auto;
+        }
+
+        &__item {
+            font-family: $font-nav2;
+            font-weight: 500;
+        }
+    }
+}

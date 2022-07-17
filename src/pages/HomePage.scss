@@ -1,0 +1,12 @@
+#root__child {
+    background: $uranian-blue;
+    margin: auto;
+    height: 100%;
+  
+    position: relative;
+    max-width: $desktop-size;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }

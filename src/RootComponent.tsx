@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 import { ROUTES } from './resources/routes-constants'
-import './styles/main.sass'
+import './styles/main.scss'
 
 const RootComponent: React.FC = () => {
     return (

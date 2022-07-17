@@ -1,5 +1,5 @@
 {
-  "name": "www.yorqat",
+  "name": "www.qatto",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +14,7 @@
     "axios": "^0.27.2",
     "eslint-plugin-prettier": "^4.2.1",
     "moment": "^2.29.4",
+    "mongoose": "^6.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
@@ -31,7 +32,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --cache .",
-    "format": "prettier --check ."
+    "format": "prettier --check .",
+    "sync": "npm run build; rsync -av build/ pi@loratta:/dat/pv/default.www-qatto.pvc/"
   },
   "eslintConfig": {
     "extends": "react-app"

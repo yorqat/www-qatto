@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Marcellus&family=Open+Sans:wght@700&family=Orienta&display=swap');
+// Cold colors
+$aqua: #7fdbff;
+$blue: #0074d9;
+$navy: #001f3f;
+$teal: #39cccc;
+$green: #2ecc40;
+$olive: #3d9970;
+$lime: #01ff70;
+
+// Warm colors
+$yellow: #ffdc00;
+$orange: #ff851b;
+$red: #ff4136;
+$fuchsia: #f012be;
+$purple: #b10dc9;
+$maroon: #85144b;
+
+// Grayscale
+$white: #ffffff;
+$silver: #dddddd;
+$gray: #aaaaaa;
+$black: #111111;
+
+$main-background-color: $white;
+$main-text-color: $black;
+$divider-color: rgba($black, .14);
+
+$main-text-size: 14px;
+$main-border-radius: 6px;
+
+$small-space: 16px;
+$medium-space: 32px;
+$large-space: 64px;
+
+$phone-size: 600px;
+$tablet-size: 992px;
+$desktop-size: 1200px;
+
+$font-title: 'Marcellus', serif;
+$font-section: 'Open Sans', sans-serif;
+$font-text: 'Orienta', sans-serif;
+$font-nav: 'Ubuntu', sans-serif;
+$font-nav2: 'Bebas Neue', cursive;
+
+
+/* SCSS HEX */
+$pink-lavender: #cdb4dbff;
+$orchid-pink: #ffc8ddff;
+$nadeshiko-pink: #ffafccff;
+$uranian-blue: #bde0feff;
+$baby-blue-eyes: #a2d2ffff;
+
+$other-lavender: rgb(185, 158, 200);

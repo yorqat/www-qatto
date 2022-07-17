@@ -1,0 +1,17 @@
+@keyframes left_to_right {
+    from {
+      transform: translate(-30px);
+    }
+    to {
+      transform: translate(-10px);
+    }
+  }
+  
+  @keyframes right_to_left {
+    from {
+      transform: translate(30px) scaleX(-1);
+    }
+    to {
+      transform: translate(10px) scaleX(-1);
+    }
+}
