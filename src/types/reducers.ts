@@ -1,10 +1,10 @@
 export interface ReducerData {
-    contents: string[]
+  contents: string[];
 }
 
 export type ReduxActionData<T> = {
-    type: any
-    payload?: T
-}
+  type: any;
+  payload?: T;
+};
 
-export type ReduxAction<T> = (data: T) => ReduxActionData<T>
+export type ReduxAction<T> = (data: T) => ReduxActionData<T>;

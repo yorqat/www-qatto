@@ -4,5 +4,5 @@
  * @returns A kind greeting message
  */
 export const sayHello = (userName: string): string => {
-    return 'Welcome ' + userName + '!'
-}
+  return 'Welcome ' + userName + '!';
+};

@@ -77,7 +77,8 @@ or
 yarn lint
 ```
 
-Creates a `.eslintcache` file in which ESLint cache is stored. Running this command can dramatically improve ESLint's running time by ensuring that only changed files are linted.
+Creates a `.eslintcache` file in which ESLint cache is stored. Running this command can dramatically
+improve ESLint's running time by ensuring that only changed files are linted.
 
 <br />
 
@@ -93,7 +94,8 @@ or
 yarn format
 ```
 
-Checks if your files are formatted. This command will output a human-friendly message and a list of unformatted files, if any.
+Checks if your files are formatted. This command will output a human-friendly message and a list of
+unformatted files, if any.
 
 <br />
 
@@ -131,7 +133,8 @@ This is the structure of the files in the project:
 
 # 📖 Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more in the
+[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
