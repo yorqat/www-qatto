@@ -1,3 +1,5 @@
 export const ROUTES = {
-    HOMEPAGE_ROUTE: '/'
-}
+  HOMEPAGE_ROUTE: '/',
+  GALLERY_ROUTE: '/gallery',
+  PROJECT_ROUTES: '/projects',
+};
