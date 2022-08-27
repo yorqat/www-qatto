@@ -1,7 +1,7 @@
 import { Router, Application, send, gzip } from './deps.ts';
 
 const index = 'index.html';
-const root = `${Deno.cwd()}/public`;
+const root = `${Deno.cwd()}/build`;
 const existing = await getPaths(root);
 console.log(`Existing are ${existing}`);
 	
