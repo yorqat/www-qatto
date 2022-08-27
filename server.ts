@@ -47,6 +47,7 @@ app.use(async (ctx) => {
 		
 	await send(ctx, path, { root, index, });
 });
+
 app.use(gzip());
 	
 await app.listen({ port: 3005});

@@ -1,13 +1,6 @@
 import React from 'react';
 
-const Nav : React.FC = () => {
-    const links = [
-        "home",
-        "contact",
-        "gallery",
-        "sponsor",
-        "hire",
-    ];
+const Nav: React.FC = () => {
 
     const linksList = links.map((l, idx) => {
         return <ul className='nav__box__item' key={idx}><a href={"/" + l} >{ l.toUpperCase() }</a></ul>
@@ -18,6 +11,6 @@ const Nav : React.FC = () => {
             <ul className='nav__box'>{ linksList }</ul>
         </nav>
     );
-}
+};
 
 export default Nav;

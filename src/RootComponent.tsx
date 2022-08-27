@@ -1,9 +1,6 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import NotFoundPage from './pages/NotFoundPage'
-import { ROUTES } from './resources/routes-constants'
-import './styles/main.scss'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const RootComponent: React.FC = () => {
     return (
@@ -13,7 +10,7 @@ const RootComponent: React.FC = () => {
                 <Route path={ROUTES.HOMEPAGE_ROUTE} element={<HomePage />} />
             </Routes>
         </Router>
-    )
-}
+  );
+};
 
-export default RootComponent
+export default RootComponent;
