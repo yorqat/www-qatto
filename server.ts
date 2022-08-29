@@ -5,6 +5,7 @@ const root = `${Deno.cwd()}/build`;
 const existing = await getPaths(root);
 console.log(`Existing are ${existing}`);
 
+/// recursively grabs all the paths in the build directory
 async function getPaths(currentPath: string) {
   const names: string[] = [];
 
