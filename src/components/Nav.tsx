@@ -1,16 +1,40 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 
 const Nav: React.FC = () => {
+  const navboxRef = useRef<HTMLUListElement>(null);
 
-    const linksList = links.map((l, idx) => {
-        return <ul className='nav__box__item' key={idx}><a href={"/" + l} >{ l.toUpperCase() }</a></ul>
-    });
+  const links = ['home', 'contact', 'gallery', 'sponsor', 'hire'];
 
-    return (
-        <nav className='nav'>
-            <ul className='nav__box'>{ linksList }</ul>
-        </nav>
-    );
+  const toggleMobile = () => {
+    if (navboxRef.current) {
+      console.log('Navbox exists');
+      navboxRef.current.toggleAttribute('nav__box--mobile');
+    } else {
+      console.error('NAVBOX IS NULL');
+    }
+  };
+
+  useLayoutEffect(() => {});
+
+  return (
+    <nav className="nav">
+      <ul className="nav__box " ref={navboxRef}>
+        {links.map((l, idx) => {
+          let location = '/' + l;
+          if (l === 'home') {
+            location = '/';
+          }
+
+          return (
+            <li className="nav__box__item" key={idx}>
+              <a href={location}>{l.toUpperCase()}</a>
+            </li>
+          );
+        })}
+      </ul>
+      {/* <button onClick={toggleMobile}>Toggle mobile</button> */}
+    </nav>
+  );
 };
 
 export default Nav;

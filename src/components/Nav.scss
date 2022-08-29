@@ -1,23 +1,57 @@
 @import '../styles/_global-imports';
 
 nav.nav {
-    width: 100%;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  letter-spacing: 0.1px;
 
-    .nav__box {
-        background-color: $baby-blue-eyes;
-        padding: 1rem;
-        margin: 0;
-        display: flex;
+  @include themify($themes) {
+    background-color: themed('contentColor');
+    opacity: 0.88;
+  }
 
-        font-size: 1.2em;
+  .nav__box {
+    padding: 1rem;
+    margin: 0;
+    display: flex;
 
-        :first-of-type {
-            margin-right: auto;
-        }
+    align-items: center;
+    gap: 0.5em;
+    flex-direction: row;
 
-        &__item {
-            font-family: $font-nav2;
-            font-weight: 500;
-        }
+    :first-of-type {
+      margin-right: auto;
     }
+
+    font-size: 1.1em;
+
+    &__item {
+      font-weight: 500;
+      padding: 0.5em;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &--mobile {
+      // TODO: mobile
+      flex-direction: column;
+      :first-of-type {
+        margin-left: auto;
+      }
+
+      &--collapsed {
+        flex-direction: row;
+
+        .nav__box__item {
+          // make invis but still occupy the box
+          visibility: hidden;
+          // prevent nav links from being clickable
+          pointer-events: none;
+        }
+      }
+    }
+  }
 }
