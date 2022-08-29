@@ -10,13 +10,15 @@ name: Deno
 
 on:
   push:
-    paths: 
+    paths:
       - server.ts
       - deps.ts
-      
-    branches: ["master"]
+    branches: ['master']
   pull_request:
-    branches: ["master"]
+    paths:
+      - server.ts
+      - deps.ts
+    branches: ['master']
 
 permissions:
   contents: read

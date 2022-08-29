@@ -50,7 +50,7 @@ const Projects: React.FC = () => {
 
   const listItems = repos.map((r) => (
     <article className="project" key={r.id} onClick={navi(r.project_name)}>
-      <img loading='lazy' className="project__image" src={r.art}></img>
+      <img loading="lazy" className="project__image" src={r.art}></img>
       <h3 className="project__caption">{r.project_name + '   '}</h3>
       <p className="project__caption">{r.description}</p>
       <div className="project_references">

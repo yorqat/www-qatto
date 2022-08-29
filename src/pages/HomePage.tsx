@@ -12,9 +12,9 @@ const HomePage: React.FC = () => {
       <section className="title-sect">
         <article className="title-sect__intro">
           <h1>
-            <img loading='lazy' className="chevron chevron--left-side" src={arrow} />
+            <img loading="lazy" className="chevron chevron--left-side" src={arrow} />
             Qatto
-            <img loading='lazy' className="chevron chevron--right-side" src={arrow} />
+            <img loading="lazy" className="chevron chevron--right-side" src={arrow} />
           </h1>
           <p>Welcome to my humble abode.</p>
           <p>I&apos;m Qatto your friendly neighborhood full stacker</p>
