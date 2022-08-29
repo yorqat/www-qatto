@@ -44,5 +44,5 @@ jobs:
       - name: Run linter
         run: deno lint server.ts deps.ts
 
-      - name: Run tests
-        run: deno test -A --unstable server.ts
+      # - name: Run tests
+      #  run: deno test -A --unstable server.ts
