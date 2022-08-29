@@ -25,6 +25,7 @@ async function getPaths(currentPath: string) {
 const app = new Application();
 const router = new Router();
 
+/// fetches instagram images- serving at this path
 router.get('/assets/images', async (ctx) => {
   const origin = `https://graph.instagram.com/me/media?fields=id,caption,media_url\
 	&access_token=${Deno.env.get('ACCESS_TOKEN')}`;
