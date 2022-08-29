@@ -44,45 +44,54 @@ footer {
   padding: 5px 5px 0px 5px;
   bottom: 0;
   width: 100%;
-  /* Height of the footer*/
   height: 20px;
-  background: grey;
   display: inline;
 }
 
 #root__child {
-  background: $uranian-blue;
-  margin: auto;
-  height: 100%;
+  min-height: 110vh;
+  width: 100%;
 
-  position: relative;
-  max-width: $desktop-size;
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  @include themify($themes) {
+    background-color: themed('backgroundColor');
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: $desktop-size;
+    height: max-content;
+
+    @include themify($themes) {
+      background-color: themed('contentColor');
+      color: themed('textColor');
+    }
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .chevron {
   height: 2rem;
+
+  &--left-side {
+    animation-name: left_to_right;
+    animation-duration: 0.666s;
+    animation-iteration-count: infinite;
+    position: relative;
+  }
+  &--right-side {
+    animation-name: right_to_left;
+    animation-duration: 0.666s;
+    animation-iteration-count: infinite;
+    position: relative;
+  }
 }
 
-.chevron--left-side {
-  animation-name: left_to_right;
-  animation-duration: 0.7s;
-  animation-iteration-count: infinite;
-  position: relative;
-}
-
-.chevron--right-side {
-  animation-name: right_to_left;
-  animation-duration: 0.7s;
-  animation-iteration-count: infinite;
-  position: relative;
-}
 
 img.new-tab {
-  background-color: aliceblue;
   height: 0.2rem;
 }
 
@@ -94,6 +103,6 @@ img.new-tab {
   }
 }
 
-// p { 
-//   color: $other-lavender;
-// } 
+#main-content {
+  padding: 1.2em;
+}
