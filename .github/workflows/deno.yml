@@ -13,11 +13,13 @@ on:
     paths:
       - server.ts
       - deps.ts
+      - .github/workflows/deno.yml
     branches: ['master']
   pull_request:
     paths:
       - server.ts
       - deps.ts
+      - .github/workflows/deno.yml
     branches: ['master']
 
 permissions:
