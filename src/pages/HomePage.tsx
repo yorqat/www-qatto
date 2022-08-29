@@ -1,8 +1,7 @@
 import React from 'react';
 import Project from '../components/Projects';
-import Nav from '../components/Nav';
 import pattern from '../pattern0.svg';
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const arrowBlack = 'https://i.imgur.com/YyT9BpB.png';
 const arrow = 'https://i.imgur.com/5PHiUIi.png';
 

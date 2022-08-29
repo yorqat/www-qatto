@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import { GoGitBranch, GoLink, GoLinkExternal, GoMarkGithub } from 'react-icons/go';
+import { GoGitBranch, GoLink, GoLinkExternal } from 'react-icons/go';
 
 const Projects: React.FC = () => {
   const navigate = useNavigate();

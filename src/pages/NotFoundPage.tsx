@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Nav from '../components/Nav';
 import { ROUTES } from '../resources/routes-constants';
 
 const NotFoundPage: React.FC = () => {

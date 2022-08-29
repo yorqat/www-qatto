@@ -5,6 +5,7 @@ const Nav: React.FC = () => {
 
   const links = ['home', 'contact', 'gallery', 'sponsor', 'hire'];
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const toggleMobile = () => {
     if (navboxRef.current) {
       console.log('Navbox exists');
