@@ -1,10 +1,5 @@
 import React from 'react';
 
-import triplicata from '../triplicata.png';
-import yorcloud from '../yor-cloud.png';
-import workstation from '../workstation.png';
-import maxthewaitgain from '../max-the-wait-gain.png';
-
 import { useNavigate } from 'react-router-dom';
 import { GoGitBranch, GoLink, GoLinkExternal, GoMarkGithub } from 'react-icons/go';
 
@@ -26,14 +21,14 @@ const Projects: React.FC = () => {
       repository: 'https://github.com/Qark-dev/Dotfiles',
       project_name: 'workstation',
       description: 'config for my current setup',
-      art: workstation,
+      art: 'https://i.imgur.com/KRhmq6g.png',
       id: 0,
     },
     {
       repository: 'https://github.com/Madoshakalaka/max-the-wait-gain',
       project_name: 'max-the-wait-gain',
       description: "It's a fight to not eat as much",
-      art: maxthewaitgain,
+      art: 'https://i.imgur.com/TVN1jfg.png',
       id: 1,
     },
     {
@@ -41,21 +36,21 @@ const Projects: React.FC = () => {
       repository: '',
       project_name: 'triplicata',
       description: 'Discord bot for games',
-      art: triplicata,
+      art: 'https://i.imgur.com/l9Q7AHD.png',
       id: 2,
     },
     {
       repository: 'https://github.com/Qark-dev/yorcloud_client',
       project_name: 'yorcloud',
       description: 'Yor favorite home cloud provider',
-      art: yorcloud,
+      art: 'https://i.imgur.com/JXw10LO.png',
       id: 3,
     },
   ];
 
   const listItems = repos.map((r) => (
     <article className="project" key={r.id} onClick={navi(r.project_name)}>
-      <img className="project__image" src={r.art}></img>
+      <img loading='lazy' className="project__image" src={r.art}></img>
       <h3 className="project__caption">{r.project_name + '   '}</h3>
       <p className="project__caption">{r.description}</p>
       <div className="project_references">
