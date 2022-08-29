@@ -13,7 +13,7 @@ const Projects: React.FC = () => {
 
   const navi = (path: string) => {
     return () => {
-      project_path(path);
+      navigate(project_path(path));
     };
   };
 
