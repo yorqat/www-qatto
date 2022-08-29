@@ -1,55 +1,77 @@
 @import '../styles/_global-imports';
 
 section.projects {
-    background: $baby-blue-eyes;
-    max-width: $tablet-size;
+  max-width: $desktop-size;
 
-    h2.projects__title {
-        font-family: $font-section;
-        text-transform: capitalize;
-        font-size: 2rem;
-        padding: 0 1rem;
-    }
+  h2.projects__title {
+    text-transform: capitalize;
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
 
-    ul.projects__list {
-        display: flex;
-        flex-wrap: wrap;
+  ul.projects__list {
+    display: flex;
+    flex-wrap: wrap;
 
-        background: $nadeshiko-pink;
-        justify-content: center;
-        padding: 2rem 1.5rem;
-        gap: 1.5rem;
+    justify-content: center;
+    // padding: 2rem 1.5rem;
+    gap: 1.5rem;
 
+    article.project {
+      width: 30ch;
+      height: max-content;
+      padding: 1.2em;
 
-        article.project {
-            background-color: $orchid-pink;
-            padding: 0 1rem;
-            width: 250px;
+      border-radius: 12px;
 
-            border-radius: 10px;
-            box-shadow: 2px 3px 1px 1px $pink-lavender;
+      @include themify($themes) {
+        background-color: themed('buttonColor');
+        color: themed('buttonTextColor');
+      }
 
-            a img {
-                    height: 150px;
-                    image-rendering: pixelated;
-            }
-            
-
-            h3 {
-                font-family: $font-title;
-                color: rgb(191, 104, 104);
-                text-transform: capitalize;
-
-                &::after {
-                    // content: "hewo";
-                    background-image: "https://cdn.discordapp.com/attachments/273539705595756544/998088503999082506/unknown.png";
-                }
-            }
-
-            p {
-                margin: 1rem 0;
-                color: $other-lavender;
-            }
+      &:hover {
+        @include themify($themes) {
+          background-color: themed('buttonHoverColor');
         }
+      }
+
+      img.project__image {
+        image-rendering: pixelated;
+        height: 8rem;
+      }
+
+      .project__caption {
+        padding: 0 0.5rem;
+      }
+
+      h3 {
+        text-transform: capitalize;
+        font-size: 1.5em;
+      }
+
+      p {
+        letter-spacing: -0.045em;
+        font-size: 1.2em;
+      }
+
+      .project_references {
+        font-size: 1em;
+
+        display: flex;
+        justify-content: space-evenly;
+
+        .project_reference {
+          padding: 0.5em 0.7em;
+          border-radius: 10px;
+          transition: 0.3s;
+
+          &:hover {
+            @include themify($themes) {
+              background-color: themed('buttonColor');
+            }
+          }
+        }
+      }
     }
+  }
 }
