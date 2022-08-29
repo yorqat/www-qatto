@@ -15,8 +15,6 @@ const Nav: React.FC = () => {
     }
   };
 
-  useLayoutEffect(() => {});
-
   return (
     <nav className="nav">
       <ul className="nav__box " ref={navboxRef}>
