@@ -3,8 +3,8 @@ import Project from '../components/Projects';
 import Nav from '../components/Nav';
 import pattern from '../pattern0.svg';
 
-const arrowBlack = 'https://imgur.com/YyT9BpB';
-const arrow = 'https://imgur.com/5PHiUIi';
+const arrowBlack = 'https://i.imgur.com/YyT9BpB.png';
+const arrow = 'https://i.imgur.com/5PHiUIi.png';
 
 const HomePage: React.FC = () => {
   return (
