@@ -28,12 +28,12 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-18.04
-    name: Build on ubuntu in armv8
+    name: Build on ubuntu in aarch64
     steps:
       - name: Setup env
         uses: uraimo/run-on-arch-action@v2
         with:
-          arch: armv8
+          arch: aarch64
           distro: ubuntu18.04
 
       - name: Setup repo
