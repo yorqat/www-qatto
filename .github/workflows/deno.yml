@@ -38,8 +38,8 @@ jobs:
         with:
           node-version: 18.5.0
 
-      - name: Build with node
-        run: npm run build
+      - run: npm ci
+      - run: npm run build
 
       - name: Setup env
         uses: uraimo/run-on-arch-action@v2
