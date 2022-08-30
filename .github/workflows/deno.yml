@@ -33,7 +33,7 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v3
       - name: Setup env
-      - uses: uraimo/run-on-arch-action@v2
+        uses: uraimo/run-on-arch-action@v2
         with:
           arch: armv8
           distro: ubuntu18.04
