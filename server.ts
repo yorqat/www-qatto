@@ -1,4 +1,4 @@
-import { Application, gzip, Router, send } from './deps.ts';
+import { Application, gzip, Router, send, MongoClient, Bson, Credential } from './deps.ts';
 
 const index = 'index.html';
 const root = `${Deno.cwd()}/build`;
