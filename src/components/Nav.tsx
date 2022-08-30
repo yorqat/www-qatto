@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
 const Nav: React.FC = () => {
   const navboxRef = useRef<HTMLUListElement>(null);
