@@ -36,7 +36,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18.5.0
 
       - name: Build with node
         run: npm run build
