@@ -15,3 +15,8 @@
     transform: translate(10px) scaleX(-1);
   }
 }
+
+@keyframes pop-up {
+  0% { transform: translateY(-200px) scale(0); opacity: 0; }
+  100% { transform: translateY(0px) scale(1); opacity: 1; }
+} 
