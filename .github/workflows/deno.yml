@@ -33,10 +33,12 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v3
 
-      - name: Build Frontend
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
+      - name: Build with node
         run: npm run build
 
       - name: Setup env
