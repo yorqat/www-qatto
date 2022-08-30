@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
           <p>I&apos;m Qatto your friendly neighborhood full stacker</p>
         </article>
         <article className="title-sect__visuals">
-          <img src={pattern} alt="visuals" className="title-sect__visuals_image" />
+          {/* <img src={pattern} alt="visuals" className="title-sect__visuals_image" /> */}
         </article>
       </section>
       <Project />
