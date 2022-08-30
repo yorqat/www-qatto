@@ -27,7 +27,7 @@ permissions:
 
 jobs:
   test:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Build on ubuntu in aarch64
     steps:
       - name: Setup repo
@@ -45,7 +45,7 @@ jobs:
         uses: uraimo/run-on-arch-action@v2
         with:
           arch: aarch64
-          distro: ubuntu18.04
+          distro: ubuntu20.04
           run: |
             wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip && unzip deno-linux-arm64.zip
             docker build --platform linux/arm64 -t ${{ secrets.PRIV_REPO }}/yor/qat:latest . && docker push ${{ secrets.PRIV_REPO }}yor/qat:latest
