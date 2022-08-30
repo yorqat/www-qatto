@@ -45,6 +45,9 @@ jobs:
 
       - name: Run linter
         run: deno lint server.ts deps.ts
+      
+      - name: Download and unzip deno arm64 binary
+        run: wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip && unzip deno-linux-arm64.zip
 
-      # - name: Run tests
-      #  run: deno test -A --unstable server.ts
+      - name: Build docker image
+        run: docker build -t ${{ secrets.PRIV_REPO }}/yor/qat:latest . && docker push ${{ secrets.PRIV_REPO }}yor/qat:latest
