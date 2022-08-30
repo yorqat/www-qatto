@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { GoGitBranch, GoLink, GoLinkExternal } from 'react-icons/go';
 
+interface Project {
+  _id: string,
+  repository: string,
+  project_name: string,
+  description: string,
+  art: string,
+}
+
 const Projects: React.FC = () => {
+  const [projs, setProjs] = useState<Project[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isError, setIsError] = useState<any | null>(null);
+
+  useEffect(() => {
+    fetch('/assets/projects')
+    .then((res) => res.json())
+    .then(
+      (result) => {
+        setIsLoaded(true);
+        setProjs(result);
+      },
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      (error) => {
+        setIsLoaded(true);
+        setIsError(error);
+      },
+    );
+  }, []);
+
   const navigate = useNavigate();
 
   const navi = (path: string) => {
@@ -16,69 +46,55 @@ const Projects: React.FC = () => {
     return 'projects/' + path;
   };
 
-  const repos = [
-    {
-      repository: 'https://github.com/Qark-dev/Dotfiles',
-      project_name: 'workstation',
-      description: 'config for my current setup',
-      art: 'https://i.imgur.com/KRhmq6g.png',
-      id: 0,
-    },
-    {
-      repository: 'https://github.com/Madoshakalaka/max-the-wait-gain',
-      project_name: 'max-the-wait-gain',
-      description: "It's a fight to not eat as much",
-      art: 'https://i.imgur.com/TVN1jfg.png',
-      id: 1,
-    },
-    {
-      // TODO: push the repo
-      repository: '',
-      project_name: 'triplicata',
-      description: 'Discord bot for games',
-      art: 'https://i.imgur.com/l9Q7AHD.png',
-      id: 2,
-    },
-    {
-      repository: 'https://github.com/Qark-dev/yorcloud_client',
-      project_name: 'yorcloud',
-      description: 'Yor favorite home cloud provider',
-      art: 'https://i.imgur.com/JXw10LO.png',
-      id: 3,
-    },
-  ];
+  if (isError) {
+    return (
+      <section className='projects projects--error'>
+          <h2 className="projects__title">Passions and Projects </h2>
+          <h4 className='no-content-yet'>Error: {isError}</h4>
+      </section>
+    ); 
+  } else if (!isLoaded) {
+    return (
+      <section className='projects projects--loading'>
+          <h2 className="projects__title">Passions and Projects </h2>
+          <h4 className='no-content-yet'>Loading...</h4>
+      </section>
+    );
+  } else {
+    return (
+      <section className="projects">
+        <h2 className="projects__title">Passions and Projects </h2>
+        <ul className="projects__list">{projs.map((p) => {
+          return (
+            <article className="project" key={p._id} onClick={navi(p.project_name)}>
+              <img loading="lazy" className="project__image" src={p.art}></img>
+              <h3 className="project__caption">{p.project_name + '   '}</h3>
+              <p className="project__caption">{p.description}</p>
+              <div className="project_references">
+                <div className="project_reference copy-link">
+                  <a href="">
+                    <GoLink />
+                  </a>
+                </div>
+                <div className="project_reference github">
+                  <a href={p.repository} className="project_github">
+                    <GoGitBranch />
+                  </a>
+                </div>
+                <div className="project_reference new-tab">
+                  <a target="_blank" rel="noreferrer" href={project_path(p.project_name)}>
+                    <GoLinkExternal />
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}</ul>
+      </section>
+    );
 
-  const listItems = repos.map((r) => (
-    <article className="project" key={r.id} onClick={navi(r.project_name)}>
-      <img loading="lazy" className="project__image" src={r.art}></img>
-      <h3 className="project__caption">{r.project_name + '   '}</h3>
-      <p className="project__caption">{r.description}</p>
-      <div className="project_references">
-        <div className="project_reference copy-link">
-          <a href="">
-            <GoLink />
-          </a>
-        </div>
-        <div className="project_reference github">
-          <a href={r.repository} className="project_github">
-            <GoGitBranch />
-          </a>
-        </div>
-        <div className="project_reference new-tab">
-          <a target="_blank" rel="noreferrer" href={project_path(r.project_name)}>
-            <GoLinkExternal />
-          </a>
-        </div>
-      </div>
-    </article>
-  ));
+  }
 
-  return (
-    <section className="projects">
-      <h2 className="projects__title">Passions and Projects </h2>
-      <ul className="projects__list">{listItems}</ul>
-    </section>
-  );
 };
 
 export default Projects;
