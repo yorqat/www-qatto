@@ -30,25 +30,16 @@ jobs:
     runs-on: ubuntu-18.04
     name: Build on ubuntu in aarch64
     steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
+
       - name: Setup env
         uses: uraimo/run-on-arch-action@v2
         with:
           arch: aarch64
           distro: ubuntu18.04
+          run: |
+            npm run build
+            wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip && unzip deno-linux-arm64.zip
+            docker build --platform linux/arm64 -t ${{ secrets.PRIV_REPO }}/yor/qat:latest . && docker push ${{ secrets.PRIV_REPO }}yor/qat:latest
 
-      - name: Setup repo
-        uses: actions/checkout@v3
-
-      - name: Setup Deno
-        uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
-        with:
-          deno-version: v1.24.3
-
-      - name: Run linter
-        run: deno lint server.ts deps.ts
-      
-      - name: Download and unzip deno arm64 binary
-        run: wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip && unzip deno-linux-arm64.zip
-
-      - name: Build docker image
-        run: docker build --platform linux/arm64 -t ${{ secrets.PRIV_REPO }}/yor/qat:latest . && docker push ${{ secrets.PRIV_REPO }}yor/qat:latest
