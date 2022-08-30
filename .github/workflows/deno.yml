@@ -33,14 +33,18 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v3
 
+      - name: Build Frontend
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+        run: npm run build
+
       - name: Setup env
         uses: uraimo/run-on-arch-action@v2
         with:
           arch: aarch64
           distro: ubuntu18.04
           run: |
-            apt update && apt install nodejs
-            npm run build
             wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip && unzip deno-linux-arm64.zip
             docker build --platform linux/arm64 -t ${{ secrets.PRIV_REPO }}/yor/qat:latest . && docker push ${{ secrets.PRIV_REPO }}yor/qat:latest
 
