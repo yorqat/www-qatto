@@ -41,5 +41,5 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - run: sudo docker build -t ${{ secrets.PRIV_REPO }}/yor/qat:latest .
-      - run: sudo docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
+      - run: docker build -t ${{ secrets.PRIV_REPO }}/yor/qat:latest .
+      - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
