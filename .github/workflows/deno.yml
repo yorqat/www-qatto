@@ -10,7 +10,6 @@ name: Deno
 
 on:
   push:
-    runs_on: ['self-hosted', 'Linux', 'ARM64']
     paths:
       - server.ts
       - deps.ts
@@ -28,7 +27,7 @@ permissions:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ['self-hosted', 'Linux', 'ARM64']
     name: Build production image to private repo
     steps:
       - name: Setup repo
