@@ -41,6 +41,5 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - uses: ScribeMD/rootless-docker@0.1.7
       - run: docker build -t ${{ secrets.PRIV_REPO }}/yor/qat:latest .
       - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
