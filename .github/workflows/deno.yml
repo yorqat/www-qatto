@@ -41,5 +41,6 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      - uses: docker-practice/actions-setup-docker@master
       - run: docker build -t ${{ secrets.PRIV_REPO }}/yor/qat:latest .
       - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
