@@ -41,7 +41,8 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - run: wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip && unzip deno-linux-arm64.zip 
+      - run: wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip
+      - run: unzip deno-linux-arm64.zip 
 
       - run: docker build -t ${{ secrets.PRIV_REPO }}/yor/qat:latest .
       - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
