@@ -7,14 +7,16 @@ RUN useradd -ms /bin/bash deno
 USER deno
 
 WORKDIR /home/deno
+
+ENV PATH="${PATH}:."
 COPY deno deno
 
 
 # Cache the dependencies as a layer (the following two steps are re-run only when deps.ts is modified).
 # Ideally cache deps.ts will download and compile _all_ external files used in main.ts.
 COPY deps.ts .
-COPY build .
-COPY run.sh .
+COPY build build
+COPY server.sh .
 COPY server.ts .
 
 # These steps will be re-run upon each file change in your working directory:
@@ -23,4 +25,4 @@ COPY server.ts .
 # RUN /home/deno/deno cache main.ts
 
 RUN ls -R
-ENTRYPOINT [ "sh", "serve.sh"]
+ENTRYPOINT [ "sh", "server.sh"]
