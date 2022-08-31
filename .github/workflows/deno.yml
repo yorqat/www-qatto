@@ -9,8 +9,8 @@
 name: Deno
 
 on:
-  runs_on: ['self-hosted', 'Linux', 'ARM64']
   push:
+    runs_on: ['self-hosted', 'Linux', 'ARM64']
     paths:
       - server.ts
       - deps.ts
