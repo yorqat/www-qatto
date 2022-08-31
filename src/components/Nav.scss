@@ -5,6 +5,7 @@ nav.nav {
   position: sticky;
   top: 0;
   letter-spacing: 0.1px;
+  z-index: 999;
 
   @include themify($themes) {
     background-color: themed('contentColor');
