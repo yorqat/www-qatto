@@ -40,6 +40,7 @@ jobs:
 
   build-deno:
     needs: setup
+    runs-on: ['self-hosted', 'Linux', 'ARM64']
     name: Download deno binary
     steps:
       - run: wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip
