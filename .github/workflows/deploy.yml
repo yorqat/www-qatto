@@ -18,13 +18,18 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  setup:
     runs-on: ['self-hosted', 'Linux', 'ARM64']
-    name: Build production image
+    name: Retrieve repo
     steps:
       - name: Setup repo
         uses: actions/checkout@v3
 
+  build-node:
+    needs: setup
+    runs-on: ['self-hosted', 'Linux', 'ARM64']
+    name: Build with npm
+    steps:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
@@ -33,12 +38,17 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+  build-deno:
+    needs: setup
+    name: Download deno binary
+    steps:
       - run: wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip
       - run: unzip deno-linux-arm64.zip 
 
   registry:
     runs-on: ['self-hosted', 'Linux', 'ARM64']
-    name: Push image to private repo
-    needs: build
+    name: Build and push image to private repo
+    needs: [build-node, build-deno]
+    steps:
       - run: docker build -t ${{ secrets.PRIV_REPO }}/yor/qat:latest .
       - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
