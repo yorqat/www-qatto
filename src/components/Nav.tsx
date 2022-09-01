@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
+import { GoGrabber } from 'react-icons/go';
 
 const Nav: React.FC = () => {
   const navboxRef = useRef<HTMLUListElement>(null);
 
-  const links = ['home', 'contact', 'gallery', 'sponsor', 'hire'];
+  const links = ['contact', 'gallery', 'sponsor', 'hire'];
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const toggleMobile = () => {
@@ -16,18 +17,23 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <nav className="nav">
-      <ul className="nav__box " ref={navboxRef}>
+    <nav className="nav nav--mobile nav--mobile--expanded">
+      <button className='home-btn'>
+        <a href="/">
+          <img src="favicon.ico" alt="site logo" style={{ height: '3rem', width: '3rem', imageRendering: 'pixelated' }}/>
+        </a>
+      </button>
+      <button className="nav-btn">
+        <GoGrabber className='nav-btn__icon' />
+      </button>
+      <ul className="nav__box" ref={navboxRef}>
         {links.map((l, idx) => {
-          let location = '/' + l;
-          if (l === 'home') {
-            location = '/';
-          }
+          const location = '/' + l;
 
           return (
-            <li className="nav__box__item" key={idx}>
+            <button className="nav__box__item" key={idx}>
               <a href={location}>{l.toUpperCase()}</a>
-            </li>
+            </button>
           );
         })}
       </ul>

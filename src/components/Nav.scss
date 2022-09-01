@@ -12,8 +12,20 @@ nav.nav {
     opacity: 0.88;
   }
 
+  button.nav-btn {
+    // width: 100%;
+    margin-left: auto;
+    padding-right: 0.5em;
+    // margin auto only applies to block elements TMYK
+    display: block;
+    
+    .nav-btn__icon {
+      font-size: 3rem;
+    }
+  }
+
   .nav__box {
-    padding: 1rem;
+    padding: 0 1rem 1rem 1rem;
     margin: 0;
     display: flex;
 
@@ -30,6 +42,8 @@ nav.nav {
     &__item {
       font-weight: 500;
       padding: 0.5em;
+      height: 2em;
+      width: 100%;
 
       &:hover {
         text-decoration: underline;
