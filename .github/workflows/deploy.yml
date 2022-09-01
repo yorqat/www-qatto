@@ -10,25 +10,17 @@ name: Deno
 
 on:
   push:
-    paths:
-      - server.ts
-      - deps.ts
-      - .github/workflows/deno.yml
     branches: ['master']
   pull_request:
-    paths:
-      - server.ts
-      - deps.ts
-      - .github/workflows/deno.yml
     branches: ['master']
 
 permissions:
   contents: read
 
 jobs:
-  test:
+  build:
     runs-on: ['self-hosted', 'Linux', 'ARM64']
-    name: Build production image to private repo
+    name: Build production image
     steps:
       - name: Setup repo
         uses: actions/checkout@v3
@@ -44,5 +36,9 @@ jobs:
       - run: wget https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip
       - run: unzip deno-linux-arm64.zip 
 
+  registry:
+    runs-on: ['self-hosted', 'Linux', 'ARM64']
+    name: Push image to private repo
+    needs: build
       - run: docker build -t ${{ secrets.PRIV_REPO }}/yor/qat:latest .
       - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
