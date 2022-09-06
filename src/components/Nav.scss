@@ -6,6 +6,14 @@ nav.nav {
   top: 0;
   letter-spacing: 0.1px;
   z-index: 999;
+  display: flex;
+  flex-direction: row;
+  
+  &.nav--mobile--expanded .nav__box {
+    flex-direction: column;
+    margin: auto;
+  }
+
 
   @include themify($themes) {
     background-color: themed('contentColor');
@@ -13,8 +21,6 @@ nav.nav {
   }
 
   button.nav-btn {
-    // width: 100%;
-    margin-left: auto;
     padding-right: 0.5em;
     // margin auto only applies to block elements TMYK
     display: block;
@@ -25,8 +31,9 @@ nav.nav {
   }
 
   .nav__box {
-    padding: 0 1rem 1rem 1rem;
+    // padding: 0 1rem 1rem 1rem;
     margin: 0;
+    margin-left: auto;
     display: flex;
 
     align-items: center;
@@ -37,7 +44,7 @@ nav.nav {
       margin-right: auto;
     }
 
-    font-size: 1.1em;
+    font-size: 1.2em;
 
     &__item {
       font-weight: 500;
@@ -47,25 +54,6 @@ nav.nav {
 
       &:hover {
         text-decoration: underline;
-      }
-    }
-
-    &--mobile {
-      // TODO: mobile
-      flex-direction: column;
-      :first-of-type {
-        margin-left: auto;
-      }
-
-      &--collapsed {
-        flex-direction: row;
-
-        .nav__box__item {
-          // make invis but still occupy the box
-          visibility: hidden;
-          // prevent nav links from being clickable
-          pointer-events: none;
-        }
       }
     }
   }
