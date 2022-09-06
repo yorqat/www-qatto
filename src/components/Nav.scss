@@ -22,20 +22,14 @@ nav.nav {
   }
 
   button.nav-btn {
-    padding-right: 0.5em;
-    // margin auto only applies to block elements TMYK
-    display: block;
-    
     .nav-btn__icon {
       font-size: 3rem;
     }
   }
 
   .nav__box {
-    // padding: 0 1rem 1rem 1rem;
     margin: 0;
     margin-left: auto;
-    margin-right: 1em;
     display: flex;
 
     align-items: center;
