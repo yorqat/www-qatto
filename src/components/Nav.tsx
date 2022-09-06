@@ -31,7 +31,7 @@ const Nav: React.FC = () => {
     if (!isMobile && isExpanded) {
       setExpanded(false);
     }
-  })
+  }, [isMobile])
 
   return (
     <nav className={navClass}>
