@@ -35,13 +35,13 @@ const Gallery = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <ul className="gallery">
+      <section className="gallery">
         {imgs.map((item) => (
-          <li key={item.id} className="gallery__photo">
-            <img src={item.media_url} alt="image" className="gallery__photo_content" />
-          </li>
+          <article key={item.id} className="gallery__photo">
+            <img loading='lazy' src={item.media_url} alt="image" className="gallery__photo__content" />
+          </article>
         ))}
-      </ul>
+      </section>
     );
   }
 };
