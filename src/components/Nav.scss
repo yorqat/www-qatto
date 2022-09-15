@@ -30,7 +30,7 @@ nav.nav {
 
     @include themify($themes) {
       background-color: themed('contentColor');
-      opacity: 0.88;
+      opacity: 0.98;
     }
   }
 
