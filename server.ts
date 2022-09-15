@@ -2,7 +2,6 @@ import {
   Application,
   Bson,
   ConnectOptions,
-  Credential,
   gzip,
   MongoClient,
   Router,
