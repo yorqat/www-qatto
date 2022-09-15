@@ -9,10 +9,29 @@ nav.nav {
   display: flex;
   flex-direction: row;
   padding: 0 1em;
+
+  // expanded nav attribution covers entire screen for mobile
+  // this one is the parent element
+  &.nav--mobile--expanded {
+    position: relative;
+  }
   
-  &.nav--mobile--expanded .nav__box {
+  &.nav--mobile--expanded div.nav__box {
     flex-direction: column;
-    margin: auto;
+    justify-content: center;
+    position: absolute;
+    gap: 1.75em;
+    
+    margin: 50vh auto 0;
+    transform: translateY(-50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+
+    @include themify($themes) {
+      background-color: themed('contentColor');
+      opacity: 0.88;
+    }
   }
 
 
@@ -22,6 +41,7 @@ nav.nav {
   }
 
   button.nav-btn {
+    margin-left: auto;
     .nav-btn__icon {
       font-size: 3rem;
     }

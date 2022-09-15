@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { GoGrabber } from 'react-icons/go';
+import { GoChevronRight, GoGrabber } from 'react-icons/go';
 import useMediaQuery from "../hooks/useMediaQuery";
 
 const Nav: React.FC = () => {
@@ -53,7 +53,12 @@ const Nav: React.FC = () => {
       {
         isMobile && 
           <button className="nav-btn" onClick={toggleExpanded}>
-            <GoGrabber className='nav-btn__icon' />
+            {
+              !isExpanded && <GoGrabber className='nav-btn__icon' />
+            }
+            {
+              isExpanded && <GoChevronRight className='nav-btn__icon' />
+            }
           </button>
       }
     </nav>
