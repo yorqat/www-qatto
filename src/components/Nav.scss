@@ -20,7 +20,7 @@ nav.nav {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    
+
     width: 100vw;
     height: 100vh;
     z-index: -1;
@@ -30,7 +30,6 @@ nav.nav {
       opacity: 0.98;
     }
   }
-
 
   @include themify($themes) {
     background-color: themed('contentColor');

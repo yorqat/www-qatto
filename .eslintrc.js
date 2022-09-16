@@ -19,7 +19,7 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  ignorePatterns: ["build/*/**"],
+  ignorePatterns: ['build/*/**'],
   rules: {
     'no-control-regex': 0,
     'no-undef': 0,

@@ -1,5 +1,5 @@
 import React from 'react';
-import Project from '../components/Projects'
+import Project from '../components/Projects';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import pattern from '../pattern0.svg';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

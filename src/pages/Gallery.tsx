@@ -38,7 +38,12 @@ const Gallery = () => {
       <section className="gallery">
         {imgs.map((item) => (
           <article key={item.id} className="gallery__photo">
-            <img loading='lazy' src={item.media_url} alt="image" className="gallery__photo__content" />
+            <img
+              loading="lazy"
+              src={item.media_url}
+              alt="image"
+              className="gallery__photo__content"
+            />
           </article>
         ))}
       </section>

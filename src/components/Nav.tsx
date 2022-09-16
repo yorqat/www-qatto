@@ -1,29 +1,29 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { GoChevronRight, GoGrabber } from 'react-icons/go';
-import useMediaQuery from "../hooks/useMediaQuery";
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const Nav: React.FC = () => {
   const navboxRef = useRef<HTMLDivElement>(null);
   const [isExpanded, setExpanded] = useState(false);
   const toggleExpanded = () => {
     setExpanded(!isExpanded);
-  }
+  };
 
   const links = ['contact', 'gallery', 'sponsor', 'hire'];
 
   const isMobile = useMediaQuery('(max-width: 600px)');
 
-  let navClass = "nav";
+  let navClass = 'nav';
 
   const toMobile = () => {
-    navClass = navClass + " nav--mobile";
-  }
-  
+    navClass = navClass + ' nav--mobile';
+  };
+
   if (isMobile) {
     toMobile();
 
     if (isExpanded) {
-      navClass = navClass + " nav--mobile--expanded";
+      navClass = navClass + ' nav--mobile--expanded';
     }
   }
 
@@ -31,36 +31,36 @@ const Nav: React.FC = () => {
     if (!isMobile && isExpanded) {
       setExpanded(false);
     }
-  }, [isMobile, isExpanded])
+  }, [isMobile, isExpanded]);
 
   return (
     <nav className={navClass}>
-      <button className='home-btn'>
+      <button className="home-btn">
         <a href="/">
-          <img src="favicon.ico" alt="site logo" style={{ height: '3rem', width: '3rem', imageRendering: 'pixelated' }}/>
+          <img
+            src="favicon.ico"
+            alt="site logo"
+            style={{ height: '3rem', width: '3rem', imageRendering: 'pixelated' }}
+          />
         </a>
       </button>
       <div className="nav__box" ref={navboxRef}>
-        {(!isMobile || (isMobile && isExpanded)) && links.map((l, idx) => {
-          const location = '/' + l;
-          return (
-            <button className="nav__box__item" key={idx}>
-              <a href={location}>{l.toUpperCase()}</a>
-            </button>
-          );
-        })}
+        {(!isMobile || (isMobile && isExpanded)) &&
+          links.map((l, idx) => {
+            const location = '/' + l;
+            return (
+              <button className="nav__box__item" key={idx}>
+                <a href={location}>{l.toUpperCase()}</a>
+              </button>
+            );
+          })}
       </div>
-      {
-        isMobile && 
-          <button className="nav-btn" onClick={toggleExpanded}>
-            {
-              !isExpanded && <GoGrabber className='nav-btn__icon' />
-            }
-            {
-              isExpanded && <GoChevronRight className='nav-btn__icon' />
-            }
-          </button>
-      }
+      {isMobile && (
+        <button className="nav-btn" onClick={toggleExpanded}>
+          {!isExpanded && <GoGrabber className="nav-btn__icon" />}
+          {isExpanded && <GoChevronRight className="nav-btn__icon" />}
+        </button>
+      )}
     </nav>
   );
 };
