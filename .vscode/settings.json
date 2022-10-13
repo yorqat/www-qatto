@@ -1,3 +1,0 @@
-{
-  "deno.enablePaths": ["server.ts", "deps.ts"]
-}
