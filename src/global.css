@@ -1,0 +1,120 @@
+/**
+ * WHAT IS THIS FILE?
+ *
+ * Globally applied styles. No matter which components are in the page or matching route,
+ * the styles in here will be applied to the Document, without any sort of CSS scoping.
+ *
+ */
+
+* {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root {
+  --qwik-dark-blue: #e90078;
+  --qwik-light-blue: #18b6f6;
+  --qwik-light-purple: #ac7ff4;
+  --qwik-dark-purple: #c2ac3f;
+
+  --lighter: #eee;
+  --light: #ddd;
+
+  --dark: #333333;
+  --darker: #161616;
+
+  --primary: var(--light);
+  --secondary: var(--dark);
+  --tertiary: var(--darker);
+
+  --max-width: 1024px;
+}
+
+body {
+  background-color: var(--tertiary);
+  color: var(--primary);
+
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body.theme-light {
+  --primary: var(--dark);
+  --secondary: var(--lighter);
+  --tertiary: var(--light);
+}
+
+main {
+  scroll-behavior: smooth;
+  max-width: var(--max-width);
+  margin: 0 auto;
+
+  background-color: var(--secondary);
+  color: var(--primary);
+
+  height: 100vh;
+  overflow-y: scroll;
+
+  box-sizing: border-box;
+  border-bottom: 10px solid var(--qwik-dark-blue);
+}
+
+/* main::-webkit-scrollbar {
+  background-color: var(--tertiary);
+  width: 6px;
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 4px;
+  border-left: dashed 2px var(--tertiary);
+} */
+
+section {
+  height: max-content;
+}
+
+h1,
+h2 {
+  margin: 0 0 5px 0;
+}
+
+hr {
+  background-color: var(--tertiary);
+  border: 1px var(--tertiary) solid;
+}
+
+.lightning {
+  filter: hue-rotate(180deg);
+}
+
+section {
+  padding: 20px;
+}
+
+a,
+a:visited {
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+input[type="submit"] {
+  background-color: var(--tertiary);
+  color: var(--primary);
+  border: dashed var(--secondary) 1px;
+  border-radius: 16px;
+  padding: 1em 2em;
+}
+
+input[type="submit"]:active {
+  background-color: var(--primary);
+  color: var(--secondary);
+  border: dashed var(--tertiary) 1px;
+}

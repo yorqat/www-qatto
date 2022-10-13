@@ -1,143 +1,86 @@
-<h1 align="center">New React App</h1>
+# Qwik App ⚡️
 
-<br />
+- [Qwik Docs](https://qwik.builder.io/)
+- [Discord](https://qwik.builder.io/chat)
+- [Qwik Github](https://github.com/BuilderIO/qwik)
+- [@QwikDev](https://twitter.com/QwikDev)
+- [Vite](https://vitejs.dev/)
+- [Partytown](https://partytown.builder.io/)
+- [Mitosis](https://github.com/BuilderIO/mitosis)
+- [Builder.io](https://www.builder.io/)
 
-This is a blank README file that you can customize at your needs.\
-Describe your project, how it works and how to contribute to it.
+---
 
-<br />
+## Project Structure
 
-# 🚀 Available Scripts
-
-In the project directory, you can run:
-
-<br />
-
-## ⚡️ start
-
-```
-npm start
-```
-
-or
+Inside of you project, you'll see the following directories and files:
 
 ```
-yarn start
+├── public/
+│   └── ...
+└── src/
+    ├── components/
+    │   └── ...
+    └── routes/
+        └── ...
 ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `src/routes`: Provides the directory based routing, which can include a hierarchy of `layout.tsx` layout files, and `index.tsx` files as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
 
-<br />
+- `src/components`: Recommended directory for components.
 
-## 🧪 test
+- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
 
-```
-npm test
-```
+## Add Integrations
 
-or
+Use the `npm run qwik add` command to add other integrations. Some examples of integrations include as a Cloudflare, Netlify or Vercel server, and the Static Site Generator (SSG).
 
 ```
-yarn test
+npm run qwik add
 ```
 
-Launches the test runner in the interactive watch mode.
+## Development
 
-<br />
-
-## 🦾 build
+Development mode uses [Vite's development server](https://vitejs.dev/). For Qwik during development, the `dev` command will also server-side render (SSR) the output. The client-side development modules loaded by the browser.
 
 ```
-npm build
+npm run dev
 ```
 
-or
+> Note: during dev mode, Vite will request many JS files, which does not represent a Qwik production build.
+
+## Preview
+
+The preview command will create a production build of the client modules, production build of `src/entry.preview.tsx`, and create a local server. The preview server is only for convenience to locally preview a production build, but it should not be used as a production server.
 
 ```
-yarn build
+npm run preview
 ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Production
 
-The build is minified and the filenames include the hashes.
-
-<br />
-
-## 🧶 lint
+The production build should generate the client and server modules by running both client and server build commands. Additionally, the build command will use Typescript run a type check on the source.
 
 ```
-npm lint
+npm run build
 ```
 
-or
+## Express Server
+
+This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
 
 ```
-yarn lint
+npm run serve
 ```
 
-Creates a `.eslintcache` file in which ESLint cache is stored. Running this command can dramatically
-improve ESLint's running time by ensuring that only changed files are linted.
+Then visit [http://localhost:8080/](http://localhost:8080/)
 
-<br />
+## Express Server
 
-## 🎯 format
-
-```
-npm format
-```
-
-or
+This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
 
 ```
-yarn format
+npm run serve
 ```
 
-Checks if your files are formatted. This command will output a human-friendly message and a list of
-unformatted files, if any.
-
-<br />
-
-# 🧬 Project structure
-
-This is the structure of the files in the project:
-
-```sh
-    │
-    ├── public                  # public files (favicon, .htaccess, manifest, ...)
-    ├── src                     # source files
-    │   ├── components
-    │   ├── pages
-    │   ├── resources           # images, constants and other static resources
-    │   ├── store               # Redux store
-    │   │   ├── actions         # store's actions
-    │   │   └── reducers        # store's reducers
-    │   ├── styles
-    │   ├── tests               # all test files
-    │   ├── types               # data interfaces
-    │   ├── utility             # utilities functions and custom components
-    │   ├── App.tsx
-    │   ├── index.tsx
-    │   ├── react-app-env.d.ts
-    │   ├── RootComponent.tsx   # React component with all the routes
-    │   ├── serviceWorker.ts
-    │   └── setupTests.ts
-    ├── .eslintrc.js
-    ├── .gitignore
-    ├── .prettierrc
-    ├── package.json
-    ├── README.md
-    └── tsconfig.json
-```
-
-# 📖 Learn More
-
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-#
-
-<p align="center">Bootstrapped with Create React App.</p>
+Then visit [http://localhost:8080/](http://localhost:8080/)

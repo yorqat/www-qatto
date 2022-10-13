@@ -10,16 +10,16 @@ name: Deno
 
 on:
   push:
-    branches: ['master']
+    branches: ["qwik-revamp"]
   pull_request:
-    branches: ['master']
+    branches: ["qwik-revamp"]
 
 permissions:
   contents: read
 
 jobs:
   setup:
-    runs-on: ['self-hosted', 'Linux', 'ARM64']
+    runs-on: ["self-hosted", "Linux", "ARM64"]
     name: Retrieve repo
     steps:
       - name: Setup repo
@@ -27,7 +27,7 @@ jobs:
 
   build:
     needs: setup
-    runs-on: ['self-hosted', 'Linux', 'ARM64']
+    runs-on: ["self-hosted", "Linux", "ARM64"]
     name: Build with npm and Download deno binary
     steps:
       - name: Setup node
@@ -37,13 +37,9 @@ jobs:
 
       - run: npm ci
       - run: npm run build
-      - run:
-          wget
-          https://github.com/LukeChannings/deno-arm64/releases/download/v1.24.3/deno-linux-arm64.zip
-      - run: unzip deno-linux-arm64.zip
 
   registry:
-    runs-on: ['self-hosted', 'Linux', 'ARM64']
+    runs-on: ["self-hosted", "Linux", "ARM64"]
     name: Build and push image to private repo
     needs: build
     steps:

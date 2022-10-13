@@ -1,0 +1,14 @@
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: var(--primary) dashed 0.1px;
+  border-radius: 10px;
+  background-color: var(--tertiary);
+
+  padding: 15px;
+  color: var(--primary);
+}
+
+.g-recaptcha {
+  margin-top: 1em;
+}

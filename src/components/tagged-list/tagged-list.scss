@@ -1,0 +1,32 @@
+h1 {
+  font-size: 4em;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+
+  .tag-list__item {
+    input[type="checkbox"] {
+      display: none;
+
+      & + span {
+        color: var(--primary);
+        background-color: var(--tertiary);
+        border-radius: 16px;
+        padding: 0.2em 1em;
+
+        &:hover {
+          // background-color: var(--tertiary);
+        }
+      }
+
+      &:checked + span {
+        color: var(--secondary);
+        background-color: var(--primary);
+        padding: 0.2em 1em;
+      }
+    }
+  }
+}
