@@ -21,7 +21,7 @@ app.use(express.json());
 const routerAPI = Router({});
 
 routerAPI.get("/gallery/images", async (req, resp) => {
-  const origin = `https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=IGQVJVNFJqRXJfNHNTQjZAscmFzY1p3N0c5ZAjBlYS1hS0gxNERPdEpQQnNBakVrZAmtMekx3MXg2OHp6bWpmamRJaGNsRXZADMm1rZAkFTc3JXR2R3MGdMazRNMHFNTk5sOF81NWtpZAnpR`;
+  const origin = `https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=${process.env.ACCESS_TOKEN}`;
 
   await fetch(origin)
     .then(async (res) => resp.json(await res.json()))
