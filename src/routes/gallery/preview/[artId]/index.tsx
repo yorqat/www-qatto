@@ -7,10 +7,10 @@ import {
 import { useLocation } from "@builder.io/qwik-city";
 import styles from "./gallery.scss";
 
-export default component$((props: { id: string | null }) => {
+export default component$(() => {
   useStylesScoped$(styles);
   const loc = useLocation();
-  let link = useStore<{ src: string | null }>({ src: null });
+  const link = useStore<{ src: string | null }>({ src: null });
 
   useClientEffect$(async () => {
     await fetch(`/gallery/image?id=${loc.params.artId}`).then(async (res) => {
