@@ -28,6 +28,14 @@ routerAPI.get("/gallery/images", async (req, resp) => {
     .catch((err) => resp.json(err));
 });
 
+routerAPI.get("/gallery/image", async (req, resp) => {
+  const origin = `https://graph.instagram.com/${req.query.id}?fields=id,caption,media_url&access_token=${process.env.ACCESS_TOKEN}`;
+
+  await fetch(origin)
+    .then(async (res) => resp.json(await res.json()))
+    .catch((err) => resp.json(err));
+});
+
 app.use(routerAPI);
 
 // Static asset handlers
