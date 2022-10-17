@@ -1,0 +1,60 @@
+section.gallery-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--tertiary);
+  min-height: 100%;
+  padding: 0;
+  position: relative;
+
+  h2.gallery-overlay__title {
+    color: var(--primary);
+    text-align: center;
+    font-size: 1em;
+  }
+
+  button {
+    cursor: pointer;
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    background-color: var(--tertiary);
+    color: var(--primary);
+
+    top: 0.1em;
+    right: 0.1em;
+    border: 2px var(--tertiary);
+
+    /* the cross button */
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 65%;
+      height: 2px; /* cross thickness */
+      background-color: var(--primary);
+      bottom: 50%;
+    }
+
+    &::before {
+      transform: rotate(47deg);
+      left: 0.5em;
+    }
+
+    &::after {
+      transform: rotate(-47deg);
+      right: 0.5em;
+    }
+
+    &:hover {
+      transition: 0.2s;
+      background-color: var(--secondary);
+    }
+  }
+  img.gallery-overlay__img {
+    box-sizing: border-box;
+    // border: 2px dashed var(--primary);
+    width: 100%;
+  }
+}
