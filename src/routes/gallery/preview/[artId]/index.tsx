@@ -10,12 +10,16 @@ import styles from "./gallery.scss";
 export default component$(() => {
   useStylesScoped$(styles);
   const loc = useLocation();
-  const link = useStore<{ src: string | null }>({ src: null });
+  const link = useStore<{ src: string | null; caption: string | null }>({
+    src: null,
+    caption: null,
+  });
 
   useClientEffect$(async () => {
     await fetch(`/gallery/image?id=${loc.params.artId}`).then(async (res) => {
       const json = await res.json();
       link.src = json.media_url;
+      link.caption = json.caption;
     });
   });
 
@@ -29,7 +33,9 @@ export default component$(() => {
             }}
           ></button>
           <img className="gallery-overlay__img" src={link.src} alt="" />
-          <h2 className="gallery-overlay__title">{loc.params.artId}</h2>
+          {link.caption && (
+            <h2 className="gallery-overlay__title">{link.caption}</h2>
+          )}
         </section>
       )}
     </>
