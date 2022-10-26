@@ -13,7 +13,12 @@ export default component$(() => {
     const link = "/" + props.path;
 
     return (
-      <Link href={link} className={loc.pathname.substring(link.length, -1) == link ? "active-path" : ""}>
+      <Link
+        href={link}
+        className={
+          loc.pathname.substring(link.length, -1) == link ? "active-path" : ""
+        }
+      >
         {props.name}
       </Link>
     );
