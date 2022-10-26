@@ -11,8 +11,9 @@ export default component$(() => {
 
   const LinkNav = component$((props: { path: string; name: string }) => {
     const link = "/" + props.path;
+
     return (
-      <Link href={link} className={loc.pathname == link ? "active-path" : ""}>
+      <Link href={link} className={loc.pathname.substring(link.length, -1) == link ? "active-path" : ""}>
         {props.name}
       </Link>
     );
