@@ -1,15 +1,21 @@
 section.gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 1em;
+  justify-content: center;
+  gap: 0.8em;
 
   img.gallery__item {
     cursor: pointer;
     width: 16em;
-    border-radius: 10px;
-    border: 2px solid var(--tertiary);
+    border-radius: 16px;
     position: relative;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.24);
+
+    &:hover {
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25), 0 8px 8px rgba(0, 0, 0, 0.22);
+      transition: 0.2s;
+    }
   }
 
   .caption {
