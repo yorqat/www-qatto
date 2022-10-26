@@ -3,6 +3,7 @@ import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import TaggedList from "~/components/tagged-list/tagged-list";
 import { Card } from "./mad-cloud/index";
 import styles from "./blogs.scss";
+import { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -19,3 +20,7 @@ export default component$(() => {
     </>
   );
 });
+
+export const head: DocumentHead = {
+  title: "Yor Blog Roster",
+};

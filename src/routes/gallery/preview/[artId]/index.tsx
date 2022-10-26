@@ -4,7 +4,7 @@ import {
   useStore,
   useStylesScoped$,
 } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
+import { DocumentHead, useLocation } from "@builder.io/qwik-city";
 import styles from "./gallery.scss";
 
 export default component$(() => {
@@ -41,3 +41,7 @@ export default component$(() => {
     </>
   );
 });
+
+export const head: DocumentHead = {
+  title: "Yor Preview",
+};

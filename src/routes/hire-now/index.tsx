@@ -1,4 +1,5 @@
 import { component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
+import { DocumentHead } from "@builder.io/qwik-city";
 import { Theming } from "~/root";
 import styles from "./hire-now.scss?inline";
 
@@ -28,3 +29,7 @@ export default component$(() => {
     </>
   );
 });
+
+export const head: DocumentHead = {
+  title: "Yor Commission",
+};

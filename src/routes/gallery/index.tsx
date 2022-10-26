@@ -6,7 +6,7 @@ import {
 } from "@builder.io/qwik";
 import styles from "./gallery.scss";
 import TaggedList from "~/components/tagged-list/tagged-list";
-import { Link } from "@builder.io/qwik-city";
+import { DocumentHead, Link } from "@builder.io/qwik-city";
 
 interface Art {
   id: string;
@@ -53,3 +53,7 @@ export default component$(() => {
     </>
   );
 });
+
+export const head: DocumentHead = {
+  title: "Yor Gallery",
+};

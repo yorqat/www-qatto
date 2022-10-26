@@ -2,7 +2,7 @@ import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import mad_icon from "./launcher.png";
 import mad_screenshot from "./screenshot-001.png";
 import styles from "./mad-cloud.scss";
-import { Link } from "@builder.io/qwik-city";
+import { DocumentHead, Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -47,3 +47,7 @@ export const Card = component$(() => {
     </Link>
   );
 });
+
+export const head: DocumentHead = {
+  title: "Mad Clowd App",
+};
