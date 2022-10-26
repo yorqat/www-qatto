@@ -22,13 +22,14 @@ hr {
         padding: 0.2em 1em;
 
         &:hover {
-          // background-color: var(--tertiary);
+          background-color: var(--primary-alt);
+          color: var(--tertiary);
         }
       }
 
       &:checked + span {
+        background-color: var(--primary-alt);
         color: var(--secondary);
-        background-color: var(--primary);
         padding: 0.2em 1em;
       }
     }
