@@ -1,0 +1,33 @@
+h1 {
+  font-size: 2.5em;
+}
+
+.app-icon {
+  width: 80px;
+  border-radius: 35px;
+  float: right;
+}
+
+.app-card {
+  width: 14em;
+  text-align: center;
+  &__thumbnail {
+    clear: both;
+    width: 12em;
+  }
+  box-shadow: 2px 1px var(--tertiary);
+}
+
+.app-available {
+  font-size: 0.8em;
+  color: var(--primary-alt);
+
+  &__platform {
+    background-color: var(--primary);
+    color: var(--tertiary);
+    padding: 0.3em 0.9em;
+    // margin: 1em;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+}

@@ -1,9 +1,11 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
 // it breaks preview when inlined
 import TaggedList from "~/components/tagged-list/tagged-list";
+import { Card } from "./mad-cloud/index";
+import styles from "./blogs.scss";
 
 export default component$(() => {
-  // useStylesScoped$(styles);
+  useStylesScoped$(styles);
 
   return (
     <>
@@ -11,6 +13,7 @@ export default component$(() => {
         title={"Blogs"}
         flags={["devlogs", "courtesy", "non-coding"]}
       ></TaggedList>
+      <Card />
     </>
   );
 });
