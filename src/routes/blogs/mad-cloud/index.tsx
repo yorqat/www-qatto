@@ -50,4 +50,9 @@ export const Card = component$(() => {
 
 export const head: DocumentHead = {
   title: "Mad Clowd App",
+  meta: [
+    { name: "description", content: "Yor favorite multi-platform cloud sync app" },
+    { name: "keywords", content: "cloud, app, flutter, mobile" },
+    { name: "author", content: "Yor Qat" },
+  ],
 };

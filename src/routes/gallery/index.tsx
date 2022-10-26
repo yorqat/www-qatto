@@ -56,4 +56,9 @@ export default component$(() => {
 
 export const head: DocumentHead = {
   title: "Yor Gallery",
+  meta: [
+    { name: "description", content: "Yor's proud works in all fields of art and design" },
+    { name: "keywords", content: "art, drawing, digital, traditional" },
+    { name: "author", content: "Yor Qat" },
+  ],
 };

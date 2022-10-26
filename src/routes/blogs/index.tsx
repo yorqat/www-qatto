@@ -23,4 +23,9 @@ export default component$(() => {
 
 export const head: DocumentHead = {
   title: "Yor Blog Roster",
+  meta: [
+    { name: "description", content: "Yor's blogs on mostly tech" },
+    { name: "keywords", content: "blog, vlog, creative" },
+    { name: "author", content: "Yor Qat" },
+  ],
 };

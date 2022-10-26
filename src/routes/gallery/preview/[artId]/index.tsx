@@ -44,4 +44,9 @@ export default component$(() => {
 
 export const head: DocumentHead = {
   title: "Yor Preview",
+  meta: [
+    { name: "description", content: "An image preview" },
+    { name: "keywords", content: "art, drawing, digital, traditional" },
+    { name: "author", content: "Yor Qat" },
+  ],
 };
