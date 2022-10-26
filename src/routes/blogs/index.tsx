@@ -13,7 +13,9 @@ export default component$(() => {
         title={"Blogs"}
         flags={["devlogs", "courtesy", "non-coding"]}
       ></TaggedList>
-      <Card />
+      <article className="blog-container">
+        <Card />
+      </article>
     </>
   );
 });
