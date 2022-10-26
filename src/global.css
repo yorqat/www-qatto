@@ -67,17 +67,6 @@ main {
   border-bottom: 10px solid var(--qwik-dark-blue);
 }
 
-/* main::-webkit-scrollbar {
-  background-color: var(--tertiary);
-  width: 6px;
-}
-
-main::-webkit-scrollbar-thumb {
-  background-color: var(--secondary);
-  border-radius: 4px;
-  border-left: dashed 2px var(--tertiary);
-} */
-
 section {
   height: max-content;
 }
