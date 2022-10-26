@@ -33,8 +33,6 @@ export default component$(() => {
         title="Gallery"
         flags={["art", "assets", "design", "music"]}
       />
-      <br></br>
-      <hr></hr>
       <section className="gallery">
         {gallery.art.map((dat) => {
           return (

@@ -17,6 +17,7 @@ export default component$((props: { title: string; flags: string[] }) => {
           );
         })}
       </div>
+      <hr />
     </>
   );
 });
