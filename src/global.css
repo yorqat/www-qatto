@@ -18,11 +18,14 @@
 
   --lighter: #eee;
   --light: #ddd;
+  --light-alt: #d1d1d1;
 
   --dark: #333333;
   --darker: #161616;
+  --dark-alt: #222;
 
   --primary: var(--light);
+  --primary-alt: var(--light-alt);
   --secondary: var(--dark);
   --tertiary: var(--darker);
 
@@ -44,6 +47,7 @@ body {
 
 body.theme-light {
   --primary: var(--dark);
+  --primary-alt: var(--dark-alt);
   --secondary: var(--lighter);
   --tertiary: var(--light);
 }
