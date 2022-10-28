@@ -43,6 +43,7 @@ export default component$(() => {
               href={`/gallery/preview/${dat.id}`}
             >
               <img
+                loading="lazy"
                 id={`#${dat.caption.split(" ").join("-")}`}
                 className="gallery__item"
                 src={dat.media_url}
