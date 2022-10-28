@@ -8,7 +8,7 @@ import styles from "./gallery.scss";
 import TaggedList from "~/components/tagged-list/tagged-list";
 import { DocumentHead, Link } from "@builder.io/qwik-city";
 
-interface Art {
+export interface Art {
   id: string;
   caption: string;
   media_url: string;
