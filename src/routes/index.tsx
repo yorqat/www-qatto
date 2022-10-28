@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import Loading from "../components/loading";
 
 export default component$(() => {
   return (
@@ -10,7 +11,9 @@ export default component$(() => {
           Design <span>elegant</span> facets and <span>sell</span>.
         </p>
       </article>
-      <div className="projects"></div>
+      <article className="projects">
+        <Loading />
+      </article>
     </>
   );
 });
