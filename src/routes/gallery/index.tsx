@@ -17,9 +17,7 @@ export interface Art {
 export default component$(() => {
   useStylesScoped$(styles);
 
-  const gallery = useStore<{ art: Art[] }>({
-    art: [],
-  });
+  const gallery = useStore<{ art: Art[] }>({ art: [] });
 
   useClientEffect$(async () => {
     await fetch("/gallery/images").then(
@@ -59,7 +57,10 @@ export default component$(() => {
 export const head: DocumentHead = {
   title: "Yor Gallery",
   meta: [
-    { name: "description", content: "Yor's proud works in all fields of art and design" },
+    {
+      name: "description",
+      content: "Yor's proud works in all fields of art and design",
+    },
     { name: "keywords", content: "art, drawing, digital, traditional" },
     { name: "author", content: "Yor Qat" },
   ],
