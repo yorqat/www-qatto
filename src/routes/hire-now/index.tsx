@@ -33,7 +33,11 @@ export default component$(() => {
 export const head: DocumentHead = {
   title: "Yor Commission",
   meta: [
-    { name: "description", content: "Hire Yor to create your very own site for personal or bussiness!" },
+    {
+      name: "description",
+      content:
+        "Hire Yor to create your very own site for personal or bussiness!",
+    },
     { name: "keywords", content: "javascript, web, design, developer" },
     { name: "author", content: "Yor Qat" },
   ],

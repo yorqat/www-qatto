@@ -19,7 +19,7 @@ export default function (opts: RenderToStreamOptions) {
     manifest,
     ...opts,
     containerAttributes: {
-      lang: 'en',
+      lang: "en",
     },
     prefetchStrategy: {
       implementation: {

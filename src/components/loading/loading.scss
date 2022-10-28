@@ -1,29 +1,58 @@
 .loading {
+  position: relative;
+  margin-left: auto;
+
+  :nth-child(odd) {
+    background-color: yellow;
+  }
+
+  div {
+    width: 20px;
+    height: 20px;
     position: relative;
-    margin-left: auto;
-
-    :nth-child(odd) {
-        background-color: yellow;
-    }
-
-    div {
-        width: 20px;
-        height: 20px;
-        position: relative;
-        animation: example 2s;
-        animation-iteration-count: infinite;
-        background-color: var(--primary);
-    }
+    animation: example 2s;
+    animation-iteration-count: infinite;
+    background-color: var(--primary);
+  }
 }
 
 @keyframes example {
-    0%   {background-color:yellow; left:0px; top:0px; transform: rotate(90);}
-    12%  {background-color: black;}
-    25%  {background-color:yellow; left:40px; top:0px;}
-    37%  {background-color: black;}
-    50%  {background-color:yellow; left:40px; top:40px;}
-    62%  {background-color: black;}
-    75%  {background-color:yellow; left:0px; top:40px;}
-    82% {background-color: black;}
-    100% {background-color:yellow; left:0px; top:0px;}
+  0% {
+    background-color: yellow;
+    left: 0px;
+    top: 0px;
+    transform: rotate(90);
+  }
+  12% {
+    background-color: black;
+  }
+  25% {
+    background-color: yellow;
+    left: 40px;
+    top: 0px;
+  }
+  37% {
+    background-color: black;
+  }
+  50% {
+    background-color: yellow;
+    left: 40px;
+    top: 40px;
+  }
+  62% {
+    background-color: black;
+  }
+  75% {
+    background-color: yellow;
+    left: 0px;
+    top: 40px;
+  }
+  82% {
+    background-color: black;
+  }
+  100% {
+    background-color: yellow;
+    left: 0px;
+    top: 0px;
+  }
 }
