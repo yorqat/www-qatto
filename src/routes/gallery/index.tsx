@@ -38,6 +38,7 @@ export default component$(() => {
           return (
             <Link
               preventdefault:click
+              id={dat.id}
               key={dat.id}
               href={`/gallery/preview/${dat.id}`}
             >
