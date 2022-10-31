@@ -51,7 +51,7 @@ export default component$(() => {
         theme.dark = false;
       }
     });
-    
+
     return (
       <body lang="en" className={theme.dark ? "theme-dark" : "theme-light"}>
         <RouterOutlet />
