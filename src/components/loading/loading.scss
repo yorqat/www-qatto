@@ -1,58 +1,35 @@
 .loading {
   position: relative;
-  margin-left: auto;
-
-  :nth-child(odd) {
-    background-color: yellow;
-  }
+  margin: 1em;
+  box-sizing: border-box;
 
   div {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    animation: example 2s;
+    width: 0px;
+    height: 10px;
+    position: absolute;
+    animation: example 0.5s, stretch_ 0.6s;
     animation-iteration-count: infinite;
-    background-color: var(--primary);
+    background-color: var(--tertiary);
+    opacity: 0.5;
+
+    border-radius: 30px;
   }
 }
 
 @keyframes example {
-  0% {
-    background-color: yellow;
-    left: 0px;
-    top: 0px;
-    transform: rotate(90);
-  }
-  12% {
-    background-color: black;
-  }
-  25% {
-    background-color: yellow;
-    left: 40px;
-    top: 0px;
-  }
-  37% {
-    background-color: black;
+  20% {
+    background-color: var(--qwik-dark-blue);
   }
   50% {
-    background-color: yellow;
-    left: 40px;
-    top: 40px;
+    background-color: var(--qwik-dark-purple);
+    }
+  99% {
+    background-color: var(--tertiary);
   }
-  62% {
-    background-color: black;
-  }
-  75% {
-    background-color: yellow;
-    left: 0px;
-    top: 40px;
-  }
-  82% {
-    background-color: black;
-  }
+}
+
+@keyframes stretch_ {
   100% {
-    background-color: yellow;
-    left: 0px;
-    top: 0px;
+    width: 100%;
   }
 }

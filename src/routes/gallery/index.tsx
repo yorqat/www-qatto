@@ -7,6 +7,7 @@ import {
 import styles from "./gallery.scss";
 import TaggedList from "~/components/tagged-list/tagged-list";
 import { DocumentHead, Link } from "@builder.io/qwik-city";
+import Loading from "~/components/loading";
 
 export interface Art {
   id: string;
@@ -31,6 +32,7 @@ export default component$(() => {
         title="Gallery"
         flags={["art", "assets", "design", "music"]}
       />
+      {gallery.art.length === 0 && <Loading />}
       <section className="gallery">
         {gallery.art.map((dat) => {
           return (
