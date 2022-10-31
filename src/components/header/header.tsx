@@ -41,6 +41,10 @@ export default component$(() => {
         <input
           onClick$={() => {
             theme.dark = !theme.dark;
+            localStorage.setItem(
+              "prefers-color-scheme",
+              theme.dark ? "dark" : "light"
+            );
           }}
           type="checkbox"
           class="theme-switcher__checkbox"

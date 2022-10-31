@@ -1,6 +1,7 @@
 import {
   component$,
   createContext,
+  useClientEffect$,
   useContext,
   useContextProvider,
   useStore,
@@ -39,6 +40,18 @@ export default component$(() => {
   const Body = component$(() => {
     const theme = useContext(Theming);
 
+    useClientEffect$(() => {
+      const scheme = localStorage.getItem("prefers-color-scheme");
+      if (scheme === "dark") {
+        theme.dark = true;
+      } else if (scheme === "light") {
+        theme.dark = false;
+      } else {
+        localStorage.setItem("prefers-color-scheme", "light");
+        theme.dark = false;
+      }
+    });
+    
     return (
       <body lang="en" className={theme.dark ? "theme-dark" : "theme-light"}>
         <RouterOutlet />
