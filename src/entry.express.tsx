@@ -12,7 +12,7 @@ const buildDir = join(distDir, "build");
 // Create the Qwik City express middleware
 const { router, notFound } = createQwikCity({
   render,
-  qwikCityPlan: QwikCityPlan
+  qwikCityPlan: QwikCityPlan,
 });
 
 // Create the express server
