@@ -1,19 +1,20 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import Loading from "../components/loading";
+import Chevron from "../components/chevron/chevron";
 
 export default component$(() => {
   return (
     <>
       <article className="intro">
-        <h1>Yor Qat</h1>
+        <h1>
+          Yor Qat
+          <Chevron />
+        </h1>
         <p>
           Design <span>elegant</span> facets and <span>sell</span>.
         </p>
       </article>
-      <article className="projects">
-        <Loading />
-      </article>
+      <article className="projects"></article>
     </>
   );
 });

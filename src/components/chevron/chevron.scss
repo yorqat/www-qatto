@@ -1,0 +1,20 @@
+.chevron {
+  display: inline-block;
+  transform: translateY(0.1em) rotate(-90deg);
+  width: 1em;
+  height: 1em;
+
+  .chevron--parallelogram {
+    position: absolute;
+    width: 0.5em;
+    height: 0.2em;
+    background-color: var(--qwik-dark-blue);
+    transform: translateY(200%) translateX(0.05em) rotate(-30deg) skew(-30deg);
+  }
+
+  :nth-child(2) {
+    transform: translateY(200%) translateX(0.45em) scaleX(-1) rotate(-30deg)
+      skew(-30deg);
+    background-color: var(--qwik-dark-purple);
+  }
+}
