@@ -47,6 +47,7 @@ export default component$(() => {
                 id={`#${dat.caption.split(" ").join("-")}`}
                 className="gallery__item"
                 src={dat.media_url}
+                alt="image art"
               />
             </Link>
           );
