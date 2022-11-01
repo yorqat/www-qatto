@@ -1,4 +1,5 @@
-import { qwikCity } from "@builder.io/qwik-city/middleware/node";
+import { createQwikCity } from "@builder.io/qwik-city/middleware/node";
+import QwikCityPlan from "@qwik-city-plan";
 import express, { Router } from "express";
 import { fileURLToPath } from "url";
 import { join } from "path";
@@ -9,7 +10,10 @@ const distDir = join(fileURLToPath(import.meta.url), "..", "..", "dist");
 const buildDir = join(distDir, "build");
 
 // Create the Qwik City express middleware
-const { router, notFound } = qwikCity(render);
+const { router, notFound } = createQwikCity({
+  render,
+  qwikCityPlan: QwikCityPlan
+});
 
 // Create the express server
 // https://expressjs.com/
