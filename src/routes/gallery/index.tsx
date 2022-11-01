@@ -1,13 +1,12 @@
 import {
   component$,
-  useStylesScoped$,
   useStore,
   useClientEffect$,
+  useStylesScoped$,
 } from "@builder.io/qwik";
 import styles from "./gallery.scss";
 import TaggedList from "~/components/tagged-list/tagged-list";
 import { DocumentHead, Link } from "@builder.io/qwik-city";
-import Loading from "~/components/loading";
 
 export interface Art {
   id: string;
@@ -26,13 +25,28 @@ export default component$(() => {
     );
   });
 
+  const Loading_ = component$(() => {
+    useStylesScoped$(styles);
+
+    return (
+      <section className="gallery">
+        {[...Array(9).keys()].map(() => {
+          return (
+            <Link preventdefault:click>
+              <div className="gallery__item gallery__item--placeholder" />
+            </Link>
+          );
+        })}
+      </section>
+    );
+  });
+
   return (
     <>
       <TaggedList
         title="Gallery"
         flags={["art", "assets", "design", "music"]}
       />
-      {gallery.art.length === 0 && <Loading />}
       <section className="gallery">
         {gallery.art.map((dat) => {
           return (
@@ -53,6 +67,7 @@ export default component$(() => {
           );
         })}
       </section>
+      {gallery.art.length === 0 && <Loading_ />}
     </>
   );
 });

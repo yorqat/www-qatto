@@ -4,21 +4,29 @@ section.gallery {
   justify-content: center;
   gap: 0.8em;
 
-  img.gallery__item {
+  .gallery__item {
     cursor: pointer;
     width: 14em;
+    height: 14em;
     border-radius: 16px;
-    position: relative;
-
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.24);
+    animation: fade_in 0.2s;
 
     &:hover {
       box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25), 0 8px 8px rgba(0, 0, 0, 0.22);
       transition: 0.2s;
     }
-  }
 
-  .caption {
-    background-color: white;
+    &.gallery__item--placeholder {
+      cursor: default;
+      opacity: 0.6;
+      transform: translateY(-2.2em);
+      background-color: var(--tertiary);
+      animation: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
   }
 }
