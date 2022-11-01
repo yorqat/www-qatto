@@ -33,7 +33,7 @@ export default component$(() => {
   useContextProvider(
     Theming,
     useStore<ThemesStore>({
-      dark: false,
+      dark: true,
     })
   );
 
