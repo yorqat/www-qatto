@@ -22,9 +22,10 @@ section.gallery-overlay {
     background-color: var(--tertiary);
     color: var(--primary);
 
-    top: 0.1em;
-    right: 0.1em;
+    top: 0.75em;
+    right: 0.75em;
     border: 2px var(--tertiary);
+    border-radius: 50%;
 
     /* the cross button */
     &::before,
