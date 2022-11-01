@@ -8,6 +8,7 @@ import render from "./entry.ssr";
 // Directories where the static assets are located
 const distDir = join(fileURLToPath(import.meta.url), "..", "..", "dist");
 const buildDir = join(distDir, "build");
+import compression from "compression";
 
 // Create the Qwik City express middleware
 const { router, notFound } = createQwikCity({
@@ -19,6 +20,7 @@ const { router, notFound } = createQwikCity({
 // https://expressjs.com/
 const app = express();
 
+app.use(compression());
 // why isn't this a default anyway
 app.use(express.json());
 
