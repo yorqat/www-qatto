@@ -28,7 +28,7 @@ export default component$(() => {
     <header>
       <div class="logo">
         <Link href="/">
-          <img loading="lazy" src="/favicon.ico" alt="Yor Qat site logo" />
+          <img loading="lazy" src="/favicon.ico" alt="Yor Qat site logo" width="1em" height="1em"/>
         </Link>
       </div>
       <label
