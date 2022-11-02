@@ -1,15 +1,8 @@
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://www.qatto.dev/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmYmRjRdE.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
+
+@import url("https://www.qatto.dev/roboto.css");
 
 header {
-  font-family: "Roboto Slab", serif;
+  font-family: "Qat Header", serif;
   position: sticky;
   // required by position: sticky
   top: 0;
@@ -26,7 +19,6 @@ header {
 
   -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
-
   .logo a {
     display: inline-block;
     padding: 10px;
