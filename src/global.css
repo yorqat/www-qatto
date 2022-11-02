@@ -32,6 +32,8 @@
   --max-width: 920px;
 }
 
+@import url("https://www.qatto.dev/poppins.css");
+
 body {
   background-color: var(--tertiary);
   color: var(--primary);
