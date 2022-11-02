@@ -1,10 +1,11 @@
 /**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
+* WHAT IS THIS FILE?
+*
+* Globally applied styles. No matter which components are in the page or matching route,
+* the styles in here will be applied to the Document, without any sort of CSS scoping.
+*
+*/
+@import url("https://www.qatto.dev/poppins.css");
 
 * {
   transition: background-color 0.5s, color 0.5s;
@@ -32,7 +33,6 @@
   --max-width: 920px;
 }
 
-@import url("https://www.qatto.dev/poppins.css");
 
 body {
   background-color: var(--tertiary);
