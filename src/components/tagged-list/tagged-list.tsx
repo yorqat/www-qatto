@@ -7,6 +7,7 @@ export default component$((props: { title: string; flags: string[] }) => {
   return (
     <>
       <h1>{props.title}</h1>
+      <br />
       <div className="tag-list">
         {props.flags.map((f) => {
           return (
