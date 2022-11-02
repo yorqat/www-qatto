@@ -18,9 +18,8 @@ hr {
       & + span {
         color: var(--primary);
         background-color: var(--tertiary);
-        border-radius: 16px;
-        padding: 0.2em 1em;
-
+        border-radius: 20px;
+        padding: 0.4em 0.8em;
         &:hover {
           background-color: var(--primary-alt);
           color: var(--tertiary);
@@ -30,7 +29,6 @@ hr {
       &:checked + span {
         background-color: var(--primary-alt);
         color: var(--secondary);
-        padding: 0.2em 1em;
       }
     }
   }
