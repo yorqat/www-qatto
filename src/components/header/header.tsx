@@ -28,7 +28,13 @@ export default component$(() => {
     <header>
       <div class="logo">
         <Link href="/">
-          <img loading="lazy" src="/favicon.ico" alt="Yor Qat site logo" height="2em" width="2em" />
+          <img
+            loading="lazy"
+            src="/favicon.ico"
+            alt="Yor Qat site logo"
+            height="2em"
+            width="2em"
+          />
         </Link>
       </div>
       <label
@@ -49,6 +55,8 @@ export default component$(() => {
           type="checkbox"
           class="theme-switcher__checkbox"
         />
+        <span></span>
+        <span></span>
       </label>
       <nav>
         <LinkNav path="gallery" name="Gallery" />
