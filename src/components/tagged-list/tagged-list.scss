@@ -13,23 +13,25 @@ hr {
   margin-bottom: 20px;
 
   .tag-list__item {
+    font-family: "Roboto Slab", serif;
+
     input[type="checkbox"] {
       display: none;
 
       & + span {
         color: var(--primary);
-        background-color: var(--tertiary);
-        border-radius: 20px;
+        border: 2px dashed var(--tertiary);
         padding: 0.4em 0.8em;
+
         &:hover {
-          background-color: var(--primary-alt);
-          color: var(--tertiary);
+          border: 2px dashed var(--primary-alt);
         }
       }
 
       &:checked + span {
         background-color: var(--primary-alt);
         color: var(--secondary);
+        border: 2px solid var(--primary-alt);
       }
     }
   }
