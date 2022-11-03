@@ -56,7 +56,6 @@ export default component$(() => {
           class="theme-switcher__checkbox"
         />
         <span></span>
-        <span></span>
       </label>
       <nav>
         <LinkNav path="gallery" name="Gallery" />
