@@ -10,6 +10,7 @@ hr {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+  margin-bottom: 20px;
 
   .tag-list__item {
     input[type="checkbox"] {
