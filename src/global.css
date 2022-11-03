@@ -22,8 +22,8 @@
   --light: #ddd;
   --light-alt: #d1d1d1;
 
-  --dark: #333333;
-  --darker: #161616;
+  --dark: rgb(32 32 32);
+  --darker: #2e2e2e;
   --dark-alt: #222;
 
   --primary: var(--light);
@@ -60,7 +60,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 
 body.theme-light {
