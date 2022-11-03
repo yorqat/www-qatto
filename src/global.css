@@ -47,7 +47,20 @@ body {
   height: max-content;
 }
 
-  box-sizing: border-box;
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: 0 0 6px var(--primary);
+  box-shadow: 0 0 6px var(--primary);
+  background-color: var(--tertiary);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--primary-alt);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--secondary);
 }
 
 body.theme-light {
