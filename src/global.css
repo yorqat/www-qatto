@@ -9,6 +9,7 @@
 
 * {
   transition: background-color 0.5s, color 0.5s;
+  box-sizing: border-box;
 }
 
 :root {
@@ -33,16 +34,18 @@
   --max-width: 920px;
 }
 
-
 body {
   background-color: var(--tertiary);
   color: var(--primary);
+  max-width: var(--max-width);
 
-  font-family: "Poppins300", ui-sans-serif, system-ui, -apple-system,
+  font-family: Poppins300, ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
 
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  height: max-content;
+}
 
   box-sizing: border-box;
 }
@@ -56,21 +59,12 @@ body.theme-light {
 
 main {
   scroll-behavior: smooth;
-  max-width: var(--max-width);
-  margin: 0 auto;
 
   background-color: var(--secondary);
   color: var(--primary);
 
-  height: 100vh;
-  overflow-y: scroll;
-
-  box-sizing: border-box;
   border-bottom: 10px solid var(--qwik-dark-blue);
-}
-
-section {
-  height: max-content;
+  padding: 20px;
 }
 
 h1,
