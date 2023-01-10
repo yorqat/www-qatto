@@ -45,3 +45,16 @@ jobs:
     steps:
       - run: docker build -t ${{ secrets.PRIV_REPO }}/yor/qat:latest .
       - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
+
+  kubernetes:
+    name: Deploy on kubernetes
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Create KubeConfig
+      run: |
+        mkdir ${HOME}/.kube
+        echo ${{ secrets.KUBE_CONFIG }} | base64 --decode ${HOME}/.kube/config
+    - name: Deploy finally
+      run: kubectl apply -f k8s/
