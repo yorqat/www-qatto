@@ -47,7 +47,7 @@ jobs:
       - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
 
   kubernetes:
-    runs-on: ["self-hosted", "Linux", "ARM64"]
+    runs-on: ubuntu-latest
     name: Deploy on kubernetes
     steps:
     - name: Checkout
@@ -58,5 +58,3 @@ jobs:
         echo "${{ secrets.KUBE_CONFIG }}" | base64 --decode > ${HOME}/.kube/config
     - name: Deploy finally
       run: kubectl apply -f k8s/
-    - name: Clean up
-      run: rm -rf ${HOME}/.kube
