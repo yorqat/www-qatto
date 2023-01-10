@@ -47,6 +47,7 @@ jobs:
       - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
 
   kubernetes:
+    runs-on: ["self-hosted", "Linux", "ARM64"]
     name: Deploy on kubernetes
     runs-on: ubuntu-latest
     steps:
