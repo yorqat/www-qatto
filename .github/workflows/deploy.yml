@@ -47,6 +47,7 @@ jobs:
       - run: docker push ${{ secrets.PRIV_REPO }}/yor/qat:latest
 
   kubernetes:
+    needs: registry
     runs-on: ubuntu-latest
     name: Deploy on kubernetes
     steps:
