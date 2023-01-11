@@ -11,7 +11,7 @@ export default component$(() => {
           <Chevron />
         </h1>
         <p>
-          Design <span>elegant</span> facets and <span>sell</span>.
+          Sell is everyone's language
         </p>
       </article>
       <article className="projects"></article>
