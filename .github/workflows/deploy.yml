@@ -57,6 +57,6 @@ jobs:
       run: |
         mkdir ${HOME}/.kube
         echo "${{ secrets.KUBE_CONFIG }}" | base64 --decode > ${HOME}/.kube/config
-        kubectl delete deploy www-qatto
+        kubectl delete deploy www-qatto --ignore-not-found=true
     - name: Deploy finally
       run: kubectl apply -f k8s/
